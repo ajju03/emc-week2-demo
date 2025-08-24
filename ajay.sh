@@ -2,7 +2,7 @@
 
 echo "This is a file to create syntax error"
 
-echo "If you want to make a error type 'Y/y'"
+echo "If you want to generate a error type 'Y/y'"
 
 read input
 
