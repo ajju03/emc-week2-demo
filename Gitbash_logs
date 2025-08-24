@@ -1,0 +1,371 @@
+This is the file which contains entire Git bash log from cloning the task repositry to pushing the last commit of editing the ajay.sh file without errors.
+
+------------------ Git Bash Log ----------------------------------
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample (main)
+$ ls
+Plain  emc-week2-demo/  newfile.txt
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample (main)
+$ cd emc-week2-demo/
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ ls
+check-script.sh*  test.sh*
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ touch ajay.sh
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ ls
+ajay.sh  check-script.sh*  test.sh*
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ vi ajay.sh
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ cat ajay.sh
+echo "This is a file to create syntax error"
+
+echo "If you want to make a error type 'Y/y'"
+
+read (input)
+
+if [ "$input" == "Y" ] || [ "$input" == "y" ]; then
+        echo "syntax error created"
+        echo" This is error.
+
+else
+        echo "Function ended."
+
+fi
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ chmod =x ajay.sh
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ ./ ajay.sh
+bash: ./: Is a directory
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ vi ajay.sh
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ cat ajay.sh
+#!/bin/bash
+
+echo "This is a file to create syntax error"
+
+echo "If you want to make a error type 'Y/y'"
+
+read (input)
+
+if [ "$input" == "Y" ] || [ "$input" == "y" ]; then
+        echo "syntax error created"
+        echo" This is error.
+
+else
+        echo "Function ended."
+
+fi
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ ./ ajay.sh
+bash: ./: Is a directory
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ ls
+ajay.sh*  check-script.sh*  test.sh*
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ajay.sh
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git add ajay.sh
+warning: in the working copy of 'ajay.sh', LF will be replaced by CRLF the next time Git touches it
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git commit -m "New file added to check the script for syntax error"
+[main 67ff437] New file added to check the script for syntax error
+ 1 file changed, 16 insertions(+)
+ create mode 100644 ajay.sh
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git satus
+git: 'satus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ ./ ajay.sh
+bash: ./: Is a directory
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ ^C
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ ./ajay.sh
+This is a file to create syntax error
+If you want to make a error type 'Y/y'
+./ajay.sh: line 7: syntax error near unexpected token `input'
+./ajay.sh: line 7: `read (input)'
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ vi ajay.sh
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ ./ajay.sh
+This is a file to create syntax error
+If you want to make a error type 'Y/y'
+y
+./ajay.sh: line 14: unexpected EOF while looking for matching `"'
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ ./ajay.sh
+This is a file to create syntax error
+If you want to make a error type 'Y/y'
+n
+./ajay.sh: line 14: unexpected EOF while looking for matching `"'
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ vi ajay.sh
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ ./ajay.sh
+This is a file to create syntax error
+If you want to make a error type 'Y/y'
+y
+syntax error created
+Forcing a syntax error...
+./ajay.sh: line 13: some_nonexistent_command: command not found
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ajay.sh
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git add ajay.sh
+warning: in the working copy of 'ajay.sh', LF will be replaced by CRLF the next time Git touches it
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git commit -m "File created to create syntax error"
+[main 8019360] File created to create syntax error
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 950 bytes | 950.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/ajju03/emc-week2-demo.git
+   dce40fd..8019360  main -> main
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ ls
+ajay.sh*  check-script.sh*  test.sh*
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git branch
+* main
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git push origin main
+Everything up-to-date
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ # Edit the script (or just add a dummy line to test)
+echo "# Test change to trigger workflow" >> dummy.txt
+
+# Stage it
+git add dummy.txt
+
+# Commit it
+git commit -m "Trigger GitHub Action workflow"
+
+# Push it
+git push origin main
+warning: in the working copy of 'dummy.txt', LF will be replaced by CRLF the next time Git touches it
+[main 8fac387] Trigger GitHub Action workflow
+ 1 file changed, 1 insertion(+)
+ create mode 100644 dummy.txt
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 323 bytes | 323.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ajju03/emc-week2-demo.git
+   8019360..8fac387  main -> main
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ ls
+ajay.sh*  check-script.sh*  dummy.txt  test.sh*
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ vi ajay.sh
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git add .
+warning: in the working copy of 'ajay.sh', LF will be replaced by CRLF the next time Git touches it
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git commit -m "Script file updated to check the Github action" push
+error: pathspec 'push' did not match any file(s) known to git
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git commit -m "Script file updated to check the Github action" git push
+error: pathspec 'git' did not match any file(s) known to git
+error: pathspec 'push' did not match any file(s) known to git
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git commit -m "Script file updated to check the Github action"
+[main 8bc769e] Script file updated to check the Github action
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 313 bytes | 313.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/ajju03/emc-week2-demo.git
+   8fac387..8bc769e  main -> main
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ vi ajay.sh
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git add . ; git commit -m "script file again edited to normal without syntax error" ; git push
+warning: in the working copy of 'ajay.sh', LF will be replaced by CRLF the next time Git touches it
+[main 2a9eed5] script file again edited to normal without syntax error
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 318 bytes | 318.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/ajju03/emc-week2-demo.git
+   8bc769e..2a9eed5  main -> main
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git log --oneline --graph --decorate --all
+* 2a9eed5 (HEAD -> main, origin/main, origin/HEAD) script file again edited to normal without syntax error
+* 8bc769e Script file updated to check the Github action
+* 8fac387 Trigger GitHub Action workflow
+* 8019360 File created to create syntax error
+* 67ff437 New file added to check the script for syntax error
+* dce40fd Fix linting error in test.sh file
+* cbb62c7 Add check-script github action
+* fff17f3 Add check-script.sh file
+* 5a27f79 first commit
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git checkout
+Your branch is up to date with 'origin/main'.
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git checkout main
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git checkout -b Ajay Task
+fatal: 'Task' is not a commit and a branch 'Ajay' cannot be created from it
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git checkout -b Ajay-Task
+Switched to a new branch 'Ajay-Task'
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (Ajay-Task)
+$ git push origin Ajay-Task
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'Ajay-Task' on GitHub by visiting:
+remote:      https://github.com/ajju03/emc-week2-demo/pull/new/Ajay-Task
+remote:
+To https://github.com/ajju03/emc-week2-demo.git
+ * [new branch]      Ajay-Task -> Ajay-Task
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (Ajay-Task)
+$ git checkout
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (Ajay-Task)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (main)
+$ git checkout Ajay-Task
+Switched to branch 'Ajay-Task'
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (Ajay-Task)
+$ git status
+On branch Ajay-Task
+nothing to commit, working tree clean
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (Ajay-Task)
+$ git push
+fatal: The current branch Ajay-Task has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin Ajay-Task
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+ajayp@Trojent MINGW64 ~/Desktop/DevOps_Sample/emc-week2-demo (Ajay-Task)
+$ git push --set-upstream origin Ajay-Task
+Everything up-to-date
+branch 'Ajay-Task' set up to track 'origin/Ajay-Task'.
+
