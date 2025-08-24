@@ -13,6 +13,6 @@ if [ "$input" == "Y" ] || [ "$input" == "y" ]; then
         some_nonexistent_command
 
 else
-	echo "Function ended."
+	echo "Since you wish not to create a syntax error, Script ran successfully..."
 
 fi
