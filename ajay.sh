@@ -10,7 +10,7 @@ if [ "$input" == "Y" ] || [ "$input" == "y" ]; then
         echo "syntax error created"
 	echo "Forcing a syntax error..."
         #Intentionally cause an error
-        some_nonexistent_command
+        Here_where_the_error_created_intentionally...
 
 else
 	echo "Since you wish not to create a syntax error, Script ran successfully..."
