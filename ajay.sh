@@ -15,4 +15,4 @@ if [ "$input" == "Y" ] || [ "$input" == "y" ]; then
 else
 	echo "Function ended."
 
-
+fi
